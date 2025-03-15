@@ -6,6 +6,12 @@ import CreateArea from "./CreateArea";
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const pikachuTheme = ["#FFD36E", "#FFF3B0", "/images/pikachu.png", "Pikachu"];
+  const [currentTheme, setCurrentTheme] = useState(pikachuTheme);
+
+  function handleThemeChange(theme) {
+    setCurrentTheme(theme);
+  }
 
   function addNote(newNote) {
     setNotes(prevNotes => {
@@ -23,8 +29,8 @@ function App() {
 
   return (
     <div>
-      <Header />
-      <CreateArea onAdd={addNote} />
+      <Header onThemeChange={handleThemeChange} currentTheme={currentTheme} />
+      <CreateArea onAdd={addNote} currentTheme={currentTheme} />
       {notes.map((noteItem, index) => {
         return (
           <Note
@@ -32,6 +38,7 @@ function App() {
             id={index}
             title={noteItem.title}
             content={noteItem.content}
+            theme={noteItem.theme}
             onDelete={deleteNote}
           />
         );
