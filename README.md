@@ -1,4 +1,4 @@
-A tool allowing users to add new notes using different pokemon themes. Notes will be renderred in the same theme as the one chosen when the note was created & added.
+A tool allowing users to add new notes using different pokemon themes. Notes will be rendered in the same theme as the one chosen when the note was created & added.
 
 Deployed Site: https://notekeep-07zt.onrender.com/
 
